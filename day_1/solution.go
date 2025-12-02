@@ -11,7 +11,10 @@ import (
 const INITIAL_NUMBER = 50
 
 func main() {
-	input := helper.LoadProblemFile("https://adventofcode.com/2025/day/1/input")
+	input, err := helper.LoadInput("https://adventofcode.com/2025/day/1/input")
+	if err != nil {
+		log.Fatal(err)
+	}
 
 	password := 0
 	curr := INITIAL_NUMBER
