@@ -11,3 +11,5 @@ go run day_X/solution.go
 | Parameter     | Purpose       |
 | ------------- |:-------------:|
 | SESSION_ID    | auth          |
+
+PS. I am too lazy to finish part two of problems. However, I will soon.
