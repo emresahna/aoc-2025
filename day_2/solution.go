@@ -55,6 +55,11 @@ func main() {
 
 	}
 
-	fmt.Println("DAY 2 RESULT")
+	fmt.Println("DAY 2 & PART 1 RESULT")
+	fmt.Println(password)
+
+	fmt.Println("============================")
+
+	fmt.Println("DAY 2 & PART 2 RESULT")
 	fmt.Println(password)
 }
