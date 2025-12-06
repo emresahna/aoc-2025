@@ -10,7 +10,7 @@ import (
 const inputUrl = "https://adventofcode.com/2025/day/5/input"
 
 func BenchmarkUnoptimizedFunc(b *testing.B) {
-	input, err := helper.LoadInput(inputUrl)
+	input, err := helper.LoadFromSource(inputUrl)
 	if err != nil {
 		log.Fatal(err)
 	}
@@ -23,7 +23,7 @@ func BenchmarkUnoptimizedFunc(b *testing.B) {
 }
 
 func BenchmarkOptimizedFunc(b *testing.B) {
-	input, err := helper.LoadInput(inputUrl)
+	input, err := helper.LoadFromSource(inputUrl)
 	if err != nil {
 		log.Fatal(err)
 	}

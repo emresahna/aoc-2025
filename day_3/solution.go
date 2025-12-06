@@ -11,7 +11,7 @@ import (
 const DIGIT_PER_JOLTAGE = 12
 
 func main() {
-	input, err := helper.LoadInput("https://adventofcode.com/2025/day/3/input")
+	input, err := helper.LoadFromSource("https://adventofcode.com/2025/day/3/input")
 	if err != nil {
 		log.Fatal(err)
 	}

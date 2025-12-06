@@ -10,7 +10,7 @@ import (
 )
 
 func main() {
-	input, err := helper.LoadInput("https://adventofcode.com/2025/day/2/input")
+	input, err := helper.LoadFromSource("https://adventofcode.com/2025/day/2/input")
 	if err != nil {
 		log.Fatal(err)
 	}

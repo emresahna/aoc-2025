@@ -3,6 +3,7 @@ package aoc2025
 import (
 	"bufio"
 	"fmt"
+	"io"
 	"log"
 	"net/http"
 	"os"
@@ -10,17 +11,11 @@ import (
 	"github.com/joho/godotenv"
 )
 
-var client *http.Client
-
-func init() {
+func LoadFromSource(url string) ([]string, error) {
 	if err := godotenv.Load(); err != nil {
 		log.Fatal("error loading .env file")
 	}
 
-	client = &http.Client{}
-}
-
-func LoadInput(url string) ([]string, error) {
 	sessionToken := os.Getenv("SESSION_ID")
 	if sessionToken == "" {
 		return nil, fmt.Errorf("SESSION_ID not found in .env file")
@@ -33,6 +28,8 @@ func LoadInput(url string) ([]string, error) {
 
 	req.Header.Add("Cookie", "session="+sessionToken)
 
+	client := &http.Client{}
+
 	resp, err := client.Do(req)
 	if err != nil {
 		return nil, err
@@ -43,7 +40,21 @@ func LoadInput(url string) ([]string, error) {
 		return nil, fmt.Errorf("error while fetching puzzle")
 	}
 
-	scanner := bufio.NewScanner(resp.Body)
+	return readInput(resp.Body)
+}
+
+func LoadFromFile(fileName string) ([]string, error) {
+	file, err := os.Open(fileName)
+	if err != nil {
+		log.Fatal(err)
+	}
+	defer file.Close()
+
+	return readInput(file)
+}
+
+func readInput(input io.Reader) ([]string, error) {
+	scanner := bufio.NewScanner(input)
 
 	var fileInputs []string
 	for scanner.Scan() {

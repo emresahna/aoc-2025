@@ -12,7 +12,7 @@ import (
 const ID_FINISH_IDENTIFIER = ""
 
 func main() {
-	input, err := helper.LoadInput("https://adventofcode.com/2025/day/5/input")
+	input, err := helper.LoadFromSource("https://adventofcode.com/2025/day/5/input")
 	if err != nil {
 		log.Fatal(err)
 	}

@@ -12,7 +12,7 @@ const ROLL = '@'
 const EMPTY = '.'
 
 func main() {
-	input, err := helper.LoadInput("https://adventofcode.com/2025/day/4/input")
+	input, err := helper.LoadFromSource("https://adventofcode.com/2025/day/4/input")
 	if err != nil {
 		log.Fatal(err)
 	}

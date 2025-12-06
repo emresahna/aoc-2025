@@ -11,7 +11,7 @@ import (
 const INITIAL_NUMBER = 50
 
 func main() {
-	input, err := helper.LoadInput("https://adventofcode.com/2025/day/1/input")
+	input, err := helper.LoadFromSource("https://adventofcode.com/2025/day/1/input")
 	if err != nil {
 		log.Fatal(err)
 	}
