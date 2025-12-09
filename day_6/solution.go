@@ -38,12 +38,12 @@ func main() {
 		password += res
 	}
 
-	fmt.Println("DAY 5 & PART 1 RESULT")
+	fmt.Println("DAY 6 & PART 1 RESULT")
 	fmt.Println(password)
 
 	fmt.Println("============================")
 
-	fmt.Println("DAY 5 & PART 2 RESULT")
+	fmt.Println("DAY 6 & PART 2 RESULT")
 	fmt.Println(password)
 }
 
