@@ -1,7 +1,6 @@
 package main
 
 import (
-	"fmt"
 	"log"
 	"testing"
 
@@ -21,9 +20,8 @@ func TestExampleCase_Part1(t *testing.T) {
 		log.Fatal(err)
 	}
 
-	fmt.Println(actual)
 	if actual != expected {
-		t.Error("example test case failed")
+		t.Errorf("example test case failed expected: %d actual: %d", expected, actual)
 	}
 }
 
@@ -41,6 +39,6 @@ func TestExampleCase_Part2(t *testing.T) {
 	}
 
 	if actual != expected {
-		t.Error("example test case failed")
+		t.Errorf("example test case failed expected: %d actual: %d", expected, actual)
 	}
 }
